@@ -1,5 +1,5 @@
-import { Stack, Link as MuiLink, IconButton } from '@mui/material';
-import { GitHub, Email, LinkedIn } from '@mui/icons-material';
+import { Stack, Link as MuiLink } from '@mui/material';
+
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -17,17 +17,8 @@ const Navbar = () => {
         </MuiLink>
       </Stack>
 
-      <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
-        <IconButton href="mailto:tiffany@example.com" color="inherit">
-          <Email />
-        </IconButton>
-        <IconButton href="https://github.com/THalsell" target="_blank" color="inherit">
-          <GitHub />
-        </IconButton>
-        <IconButton href="https://linkedin.com/in/your-link" target="_blank" color="inherit">
-          <LinkedIn />
-        </IconButton>
-      </Stack>
+      
+      
     </>
   );
 };
