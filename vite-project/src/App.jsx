@@ -9,21 +9,9 @@ import Navbar from './components/Navbar';
 const App = () => {
   return (
     <Router>
-      <Box
-        sx={{
-          display: 'flex',
-          height: '100vh', // ✅ not just minHeight
-          overflow: 'hidden', // ✅ cuts off anything outside viewport
-        }}
-      >
-        {/* 🟦 Page Content */}
-        <Box
-          sx={{
-            flex: 1,
-            bgcolor: '#f8f3f2',
-            overflowY: 'auto', // ✅ allows scrolling if needed
-          }}
-        >
+      <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+        {/* Main content scrolls */}
+        <Box sx={{ flex: 1, overflowY: 'auto', bgcolor: '#f8f3f2' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -32,16 +20,8 @@ const App = () => {
           </Routes>
         </Box>
 
-        {/* 🟩 Right Sidebar Navbar */}
-        <Box
-          sx={{
-            width: '200px',
-            bgcolor: '#223d3c',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
+        {/* Right-side navbar */}
+        <Box sx={{ width: '200px', bgcolor: '#223d3c', display: 'flex', justifyContent: 'center' }}>
           <Navbar />
         </Box>
       </Box>
