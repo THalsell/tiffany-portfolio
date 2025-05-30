@@ -36,7 +36,7 @@ const Resume = () => {
       >
         <Box
           component="img"
-          src="/public/Copy of Tiifany's Resume.pdf (4).jpg"
+          src="/Copy of Tiifany's Resume.pdf (4).jpg"
           alt="Tiffany Halsell Resume"
           sx={{
             width: '100%',
