@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './navbarStyles';
 
 const navItems = [
-  { text: 'Home', path: '/' },
+  
   { text: 'About', path: '/about' },
   { text: 'Projects', path: '/projects' },
   { text: 'Resume', path: '/resume' },
