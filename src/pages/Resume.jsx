@@ -60,7 +60,7 @@ const Resume = () => {
       <Paper elevation={6} sx={paperStyles}>
         <Box
           component="img"
-          src="/Copy of Tiifany's Resume.pdf (4).jpg"
+          src="/resume.jpg"
           alt="Tiffany Halsell Resume"
           sx={imageStyles}
         />
