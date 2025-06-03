@@ -3,7 +3,7 @@ import { keyframes } from '@emotion/react';
 import { Typography, Box, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import tiffanyImage from '../assets/tiffany.png';
-import floralBg from '../assets/floralBackground.avif';
+import floralAboutBG from '../assets/floralAboutBG.png';
 
 // Animation for fade-in effect
 const fadeIn = keyframes`
@@ -60,7 +60,7 @@ const About = () => {
       sx={{
         minHeight: '100vh',
         width: '100%',
-        backgroundImage: `url(${floralBg})`,
+        backgroundImage: `url(${floralAboutBG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center bottom',
         p: 4,
@@ -79,8 +79,8 @@ const About = () => {
           gutterBottom
           sx={{
             fontFamily: '"Ms Madi", cursive',
-            fontWeight: 600,
-            letterSpacing: 1,
+            fontWeight: 500,
+            letterSpacing: 2,
             color: '#8B5E3C',
             textShadow: '1px 1px 3px rgba(0,0,0,0.2)',
             backgroundColor: 'rgba(255, 255, 255, 0.4)',

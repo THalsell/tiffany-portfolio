@@ -1,94 +1,113 @@
-import { Box, Typography, useTheme, useMediaQuery, IconButton, Stack } from '@mui/material';
+/** @jsxImportSource @emotion/react */
+import { keyframes } from '@emotion/react';
+import { Box, Typography, IconButton, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { GitHub, Email, LinkedIn } from '@mui/icons-material';
-import Navbar from '../components/Navbar';
+import homeFloralBG from '../assets/homeFloralBG.png';
+import NavBar from '../components/Navbar';
+
+// Animation: fade-in with upward movement
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+// Wrapper with full-screen floral background
+const HomeWrapper = styled(Box)(({ theme }) => ({
+  minHeight: '100vh',
+  backgroundImage: `url(${homeFloralBG})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: theme.spacing(4),
+  textAlign: 'center',
+  animation: `${fadeIn} 1s ease`,
+}));
+
+// Name headline
+const Headline = styled(Typography)({
+  fontFamily: '"Ms Madi", cursive',
+  fontSize: '4rem',
+  color: '#8B5E3C',
+  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.15)',
+  backgroundColor: 'rgba(255, 255, 255, 0.4)',
+  padding: '10px 20px',
+  borderRadius: '12px',
+  marginBottom: '75px',
+});
+
+// Professional description
+const SubText = styled(Typography)(({ theme }) => ({
+  fontFamily: '"Playfair Display", serif',
+  fontSize: '1.5rem',
+  color: '#5E453B',
+  maxWidth: '600px',
+  backgroundColor: 'rgba(255, 255, 255, 0.4)',
+  padding: theme.spacing(2),
+  borderRadius: '12px',
+  animation: `${fadeIn} 1s ease`,
+  animationDelay: '0.5s',
+  animationFillMode: 'both',
+}));
+
+// Shared icon button style
+const iconStyles = {
+  color: '#ea794d',
+};
 
 const Home = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const styles = {
-    wrapper: {
-      display: 'flex',
-      height: '100vh',
-      overflow: 'hidden',
-    },
-    content: {
-      flex: 1,
-      bgcolor: '#f8f3f2',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      p: 4,
-    },
-    name: {
-      fontFamily: '"Ms Madi", cursive',
-      color: '#223d3c',
-      fontSize: isMobile ? '3.5rem' : '6rem',
-      lineHeight: 1.2,
-      textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-    },
-    title: {
-      mt: 2,
-      fontSize: isMobile ? '1.25rem' : '1.75rem',
-      color: '#9a4c2e',
-      fontWeight: 300,
-    },
-    sidebar: {
-      width: '200px',
-      bgcolor: '#223d3c',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  };
-
   return (
-    <Box sx={styles.wrapper}>
-      {/* Left-side main content */}
-      <Box sx={styles.content}>
-        <Typography sx={styles.name}>Tiffany Halsell</Typography>
-        <Typography sx={styles.title}>Full Stack Developer</Typography>
+    <HomeWrapper>
+      <NavBar />
 
-        <Stack direction="row" spacing={3} sx={{ mt: 4 }}>
-          <IconButton
-            component="a"
-            href="https://github.com/THalsell"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ color: '#223d3c' }}
-          >
-            <GitHub fontSize="large" />
-          </IconButton>
+      <Headline>Tiffany Halsell</Headline>
 
-          <IconButton
-            component="a"
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=tiffanyrenee100@gmail.com&su=Hello&"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ color: '#223d3c' }}
-          >
-            <Email fontSize="large" />
-          </IconButton>
+      <SubText>
+        Full Stack Web Developer • Creative Thinker • Code Storyteller
+      </SubText>
 
-          <IconButton
-            component="a"
-            href="https://www.linkedin.com/in/tiffany-halsell/"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ color: '#223d3c' }}
-          >
-            <LinkedIn fontSize="large" />
-          </IconButton>
-        </Stack>
-      </Box>
+      <Stack direction="row" spacing={3} sx={{ mt: 4 }}>
+        <IconButton
+          component="a"
+          href="https://github.com/THalsell"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={iconStyles}
+        >
+          <GitHub fontSize="large" />
+        </IconButton>
 
-      {/* Right-side Navbar */}
-      <Box sx={styles.sidebar}>
-        <Navbar />
-      </Box>
-    </Box>
+        <IconButton
+          component="a"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=tiffanyrenee100@gmail.com&su=Hello&"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={iconStyles}
+        >
+          <Email fontSize="large" />
+        </IconButton>
+
+        <IconButton
+          component="a"
+          href="https://www.linkedin.com/in/tiffany-halsell/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={iconStyles}
+        >
+          <LinkedIn fontSize="large" />
+        </IconButton>
+      </Stack>
+    </HomeWrapper>
   );
 };
 
