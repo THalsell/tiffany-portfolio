@@ -40,21 +40,21 @@ const techIcons = {
 const projects = [
   {
     title: 'Car Dealership App',
-    image: 'public/carapp.png',
+    image: 'images/carapp.png',
     description:
       'A full-stack app for viewing car listings. Includes backend API and database integration.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Postman'],
   },
   {
     title: 'Random Joke App',
-    image: 'public/randomJoke.png',
+    image: 'images/randomJoke.png',
     description: 'A fun React app that fetches and displays a random joke from an API.',
     tech: ['React', 'API', 'Vite'],
     link: 'https://THalsell.github.io/random-joke',
   },
   {
     title: 'BlackJack Game',
-    image: 'public/blackJack.png',
+    image: 'images/blackJack.png',
     description: 'A browser-based BlackJack game built with HTML, CSS, and JavaScript.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://thalsell.github.io/blackJack/',
