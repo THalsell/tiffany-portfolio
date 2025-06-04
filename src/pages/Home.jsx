@@ -4,7 +4,7 @@ import { Box, Typography, IconButton, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { GitHub, Email, LinkedIn } from '@mui/icons-material';
 import homeFloralBG from '../assets/homeFloralBG.png';
-import NavBar from '../components/Navbar';
+import NavBar from '../components/NavBar';
 
 // Animation: fade-in with upward movement
 const fadeIn = keyframes`
