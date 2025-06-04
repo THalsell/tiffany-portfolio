@@ -1,5 +1,6 @@
 import { Box, Typography, Paper, useTheme, useMediaQuery } from '@mui/material';
 import floralResumeBg from '../assets/floralResumeBg.png';
+import resume from '../../public/resume.jpg';
 
 // Reusable style constants
 const backgroundStyles = (bg) => ({
@@ -60,7 +61,7 @@ const Resume = () => {
       <Paper elevation={6} sx={paperStyles}>
         <Box
           component="img"
-          src="/resume.jpg"
+          src={resume}
           alt="Tiffany Halsell Resume"
           sx={imageStyles}
         />
