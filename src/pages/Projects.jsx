@@ -21,6 +21,7 @@ import {
 } from 'react-icons/si';
 import projectsFloralBg from '../assets/projectsFloralBg.png';
 
+
 // Icon lookup
 const techIcons = {
   React: <SiReact title="React" />,
@@ -39,21 +40,21 @@ const techIcons = {
 const projects = [
   {
     title: 'Car Dealership App',
-    image: '../assets/carapp.png',
+    image: 'public/carapp.png',
     description:
       'A full-stack app for viewing car listings. Includes backend API and database integration.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Postman'],
   },
   {
     title: 'Random Joke App',
-    image: '../assets/randomJoke.png',
+    image: 'public/randomJoke.png',
     description: 'A fun React app that fetches and displays a random joke from an API.',
     tech: ['React', 'API', 'Vite'],
     link: 'https://THalsell.github.io/random-joke',
   },
   {
     title: 'BlackJack Game',
-    image: '../assets/blackJack.png',
+    image: 'public/blackJack.png',
     description: 'A browser-based BlackJack game built with HTML, CSS, and JavaScript.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://thalsell.github.io/blackJack/',
