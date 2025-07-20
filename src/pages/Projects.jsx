@@ -6,6 +6,7 @@ import {
   CardMedia,
   Grid,
   Button,
+  Chip,
 } from '@mui/material';
 import {
   SiReact,
@@ -18,11 +19,16 @@ import {
   SiCss3,
   SiVite,
   SiApollographql,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiSupabase,
+  SiVercel,
+  SiChartdotjs,
 } from 'react-icons/si';
 import projectsFloralBg from '../assets/projectsFloralBg.png';
 
-
-// Icon lookup
+// Icon lookup - Added new icons for Recovery Companion
 const techIcons = {
   React: <SiReact title="React" />,
   'Node.js': <SiNodedotjs title="Node.js" />,
@@ -34,30 +40,54 @@ const techIcons = {
   CSS: <SiCss3 title="CSS" />,
   Vite: <SiVite title="Vite" />,
   API: <SiApollographql title="API" />,
+  // New icons for Recovery Companion
+  'Next.js': <SiNextdotjs title="Next.js" />,
+  TypeScript: <SiTypescript title="TypeScript" />,
+  'Tailwind CSS': <SiTailwindcss title="Tailwind CSS" />,
+  Supabase: <SiSupabase title="Supabase" />,
+  Vercel: <SiVercel title="Vercel" />,
+  'Chart.js': <SiChartdotjs title="Chart.js" />,
 };
 
-// Project data
+// Enhanced project data - All projects now have highlights and GitHub links
 const projects = [
+  {
+    title: 'Recovery Companion',
+    image: '/images/recovery_companion.png',
+    description:
+      'A comprehensive Progressive Web App for addiction recovery support featuring daily tracking, crisis intervention, and real-time progress analytics.',
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Chart.js', 'Vercel'],
+    link: 'https://recovery-companion-app.vercel.app',
+    github: 'https://github.com/THalsell/recovery-companion-app',
+    featured: true,
+    highlights: ['PWA Installation', 'Crisis Intervention', 'Real-time Data Viz', 'HIPAA-Compliant'],
+  },
   {
     title: 'Car Dealership App',
     image: 'images/carapp.png',
     description:
-      'A full-stack app for viewing car listings. Includes backend API and database integration.',
+      'A full-stack application for browsing and managing car listings with comprehensive backend API and database integration.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Postman'],
+    github: 'https://github.com/THalsell/car-dealership-app', // Add your actual GitHub link
+    highlights: ['Full-Stack', 'REST API', 'Database Integration', 'CRUD Operations'],
   },
   {
     title: 'Random Joke App',
     image: 'images/randomJoke.png',
-    description: 'A fun React app that fetches and displays a random joke from an API.',
+    description: 'A fun and interactive React application that fetches and displays random jokes from a third-party API with smooth animations.',
     tech: ['React', 'API', 'Vite'],
     link: 'https://THalsell.github.io/random-joke',
+    github: 'https://github.com/THalsell/random-joke', // Add your actual GitHub link
+    highlights: ['API Integration', 'React Hooks', 'Responsive Design', 'Fast Loading'],
   },
   {
     title: 'BlackJack Game',
     image: 'images/blackJack.png',
-    description: 'A browser-based BlackJack game built with HTML, CSS, and JavaScript.',
+    description: 'An interactive browser-based BlackJack game featuring game logic, score tracking, and engaging user interface built with vanilla JavaScript.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://thalsell.github.io/blackJack/',
+    github: 'https://github.com/THalsell/blackJack', // Add your actual GitHub link
+    highlights: ['Game Logic', 'DOM Manipulation', 'Event Handling', 'Vanilla JS'],
   },
 ];
 
@@ -89,24 +119,26 @@ const Projects = () => {
       {/* Project Cards */}
       <Grid container spacing={4} justifyContent="center">
         {projects.map((project, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4}>
+          <Grid item key={index} xs={12} sm={6} md={project.featured ? 8 : 4}>
             <Card
               sx={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: 4,
+                boxShadow: project.featured ? 8 : 4,
                 borderRadius: 3,
-                overflow: 'hidden',
+                overflow: 'hidden'
               }}
             >
+             
+
               <CardMedia
                 component="img"
                 image={project.image}
                 alt={project.title}
                 sx={{
-                  height: 400,
+                  height: project.featured ? 300 : 400,
                   objectFit: 'contain',
                   backgroundColor: '#f5f5f5',
                 }}
@@ -115,17 +147,45 @@ const Projects = () => {
               <CardContent sx={{ flexGrow: 1 }}>
                 {/* Title */}
                 <Typography
-                  variant="h6"
+                  variant={project.featured ? "h5" : "h6"}
                   gutterBottom
-                  sx={{ fontWeight: 600, color: '#223d3c' }}
+                  sx={{ 
+                    fontWeight: 600, 
+                    color: '#223d3c',
+                    mb: project.featured ? 2 : 1
+                  }}
                 >
                   {project.title}
                 </Typography>
 
                 {/* Description */}
-                <Typography variant="body2" sx={{ color: '#555' }}>
+                <Typography 
+                  variant="body2" 
+                  sx={{ 
+                    color: '#555',
+                    mb: project.highlights ? 2 : 0
+                  }}
+                >
                   {project.description}
                 </Typography>
+
+                {/* Project Highlights - Now for ALL projects */}
+                {project.highlights && (
+                  <Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                    {project.highlights.map((highlight) => (
+                      <Chip
+                        key={highlight}
+                        label={highlight}
+                        size="small"
+                        sx={{
+                          backgroundColor: project.featured ? '#121211' : '#121211',
+                          color: 'white',
+                          fontSize: '0.7rem',
+                        }}
+                      />
+                    ))}
+                  </Box>
+                )}
 
                 {/* Technologies */}
                 {project.tech && (
@@ -133,7 +193,12 @@ const Projects = () => {
                     {project.tech.map((tech) => (
                       <Box
                         key={tech}
-                        sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
+                        sx={{ 
+                          display: 'flex', 
+                          alignItems: 'center', 
+                          gap: 0.5,
+                          color: project.featured ? '#121211' : '#121211'
+                        }}
                       >
                         {techIcons[tech]}
                         <Typography variant="caption">{tech}</Typography>
@@ -142,18 +207,51 @@ const Projects = () => {
                   </Box>
                 )}
 
-                {/* External Link */}
-                {project.link && (
-                  <Button
-                    href={project.link}
-                    target="_blank"
-                    variant="outlined"
-                    size="small"
-                    sx={{ mt: 2, textTransform: 'none' }}
-                  >
-                    View Project
-                  </Button>
-                )}
+                {/* Action Buttons - Enhanced for ALL projects */}
+                <Box sx={{ mt: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                  {/* Live Demo Button */}
+                  {project.link && (
+                    <Button
+                      href={project.link}
+                      target="_blank"
+                      variant="contained"
+                      size="small"
+                      sx={{ 
+                        textTransform: 'none',
+                        backgroundColor: project.featured ? '#121211' : '#121211',
+                        '&:hover': {
+                          backgroundColor: project.featured ? '#121211' : '#121211',
+                        }
+                      }}
+                    >
+                      🚀 Live Demo
+                    </Button>
+                  )}
+                  
+                  {/* GitHub Button - Now for ALL projects */}
+                  {project.github && (
+                    <Button
+                      href={project.github}
+                      target="_blank"
+                      variant="outlined"
+                      size="small"
+                      sx={{ 
+                        textTransform: 'none',
+                        borderColor: project.featured ? '#121211' : '#121211',
+                        color: project.featured ? '#121211' : '#121211',
+                        '&:hover': {
+                          borderColor: project.featured ? '#121211' : '#121211',
+                          backgroundColor: project.featured 
+                            ? 'rgba(139, 94, 60, 0.04)' 
+                            : 'rgba(184, 134, 11, 0.04)',
+                        }
+                      }}
+                    >
+                      📝 GitHub
+                    </Button>
+                  )}
+                  
+                </Box>
               </CardContent>
             </Card>
           </Grid>
