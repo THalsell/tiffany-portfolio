@@ -25,6 +25,8 @@ import {
   SiSupabase,
   SiVercel,
   SiChartdotjs,
+  SiShopify,
+  SiGraphql,
 } from 'react-icons/si';
 import projectsFloralBg from '../assets/projectsFloralBg.png';
 
@@ -47,6 +49,8 @@ const techIcons = {
   Supabase: <SiSupabase title="Supabase" />,
   Vercel: <SiVercel title="Vercel" />,
   'Chart.js': <SiChartdotjs title="Chart.js" />,
+  Shopify: <SiShopify title="Shopify" />,
+  GraphQL: <SiGraphql title="GraphQL" />,
 };
 
 // Enhanced project data - All projects now have highlights and GitHub links
@@ -81,13 +85,13 @@ const projects = [
     highlights: ['API Integration', 'React Hooks', 'Responsive Design', 'Fast Loading'],
   },
   {
-    title: 'BlackJack Game',
-    image: 'images/blackJack.png',
-    description: 'An interactive browser-based BlackJack game featuring game logic, score tracking, and engaging user interface built with vanilla JavaScript.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://thalsell.github.io/blackJack/',
-    github: 'https://github.com/THalsell/blackJack', // Add your actual GitHub link
-    highlights: ['Game Logic', 'DOM Manipulation', 'Event Handling', 'Vanilla JS'],
+    title: 'Outboard Motor Sales',
+    image: '/images/outboard_motors.png',
+    description: 'Full-stack e-commerce platform for a multi-brand outboard motor dealership featuring product catalogs, dealer information, and responsive design built from scratch using headless commerce architecture.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Shopify', 'GraphQL', 'Vercel'],
+    link: 'https://outboardmotorsales.com/',
+    github: 'https://github.com/THalsell/outboard-dealership',
+    highlights: ['Headless Commerce', 'API Integration', 'SEO Optimized', 'Performance Tuned'],
   },
 ];
 
@@ -109,7 +113,7 @@ const Projects = () => {
         textAlign="center"
         sx={{
           fontFamily: '"Playfair Display", serif',
-          color: '#8B5E3C',
+          color: '#87AE73',
           mb: 6,
         }}
       >
@@ -149,9 +153,9 @@ const Projects = () => {
                 <Typography
                   variant={project.featured ? "h5" : "h6"}
                   gutterBottom
-                  sx={{ 
-                    fontWeight: 600, 
-                    color: '#223d3c',
+                  sx={{
+                    fontWeight: 600,
+                    color: '#87AE73',
                     mb: project.featured ? 2 : 1
                   }}
                 >
@@ -159,10 +163,10 @@ const Projects = () => {
                 </Typography>
 
                 {/* Description */}
-                <Typography 
-                  variant="body2" 
-                  sx={{ 
-                    color: '#555',
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: '#6B8E5C',
                     mb: project.highlights ? 2 : 0
                   }}
                 >
@@ -178,7 +182,7 @@ const Projects = () => {
                         label={highlight}
                         size="small"
                         sx={{
-                          backgroundColor: project.featured ? '#121211' : '#121211',
+                          backgroundColor: '#87AE73',
                           color: 'white',
                           fontSize: '0.7rem',
                         }}
@@ -193,11 +197,11 @@ const Projects = () => {
                     {project.tech.map((tech) => (
                       <Box
                         key={tech}
-                        sx={{ 
-                          display: 'flex', 
-                          alignItems: 'center', 
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
                           gap: 0.5,
-                          color: project.featured ? '#121211' : '#121211'
+                          color: '#87AE73'
                         }}
                       >
                         {techIcons[tech]}
@@ -216,11 +220,11 @@ const Projects = () => {
                       target="_blank"
                       variant="contained"
                       size="small"
-                      sx={{ 
+                      sx={{
                         textTransform: 'none',
-                        backgroundColor: project.featured ? '#121211' : '#121211',
+                        backgroundColor: '#87AE73',
                         '&:hover': {
-                          backgroundColor: project.featured ? '#121211' : '#121211',
+                          backgroundColor: '#6B8E5C',
                         }
                       }}
                     >
@@ -235,15 +239,13 @@ const Projects = () => {
                       target="_blank"
                       variant="outlined"
                       size="small"
-                      sx={{ 
+                      sx={{
                         textTransform: 'none',
-                        borderColor: project.featured ? '#121211' : '#121211',
-                        color: project.featured ? '#121211' : '#121211',
+                        borderColor: '#87AE73',
+                        color: '#87AE73',
                         '&:hover': {
-                          borderColor: project.featured ? '#121211' : '#121211',
-                          backgroundColor: project.featured 
-                            ? 'rgba(139, 94, 60, 0.04)' 
-                            : 'rgba(184, 134, 11, 0.04)',
+                          borderColor: '#6B8E5C',
+                          backgroundColor: 'rgba(135, 174, 115, 0.08)',
                         }
                       }}
                     >
