@@ -113,7 +113,7 @@ const Projects = () => {
         textAlign="center"
         sx={{
           fontFamily: '"Playfair Display", serif',
-          color: '#87AE73',
+          color: '#8B5E3C',
           mb: 6,
         }}
       >
