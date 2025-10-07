@@ -111,6 +111,7 @@ const Projects = () => {
       <Typography
         variant="h3"
         textAlign="center"
+        data-aos="fade-down"
         sx={{
           fontFamily: '"Playfair Display", serif',
           color: '#8B5E3C',

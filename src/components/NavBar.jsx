@@ -13,7 +13,9 @@ import styles from './navbarStyles';
 const navItems = [
   { text: 'About', path: '/about' },
   { text: 'Projects', path: '/projects' },
+  { text: 'Skills', path: '/skills' },
   { text: 'Resume', path: '/resume' },
+  { text: 'Contact', path: '/contact' },
 ];
 
 const Navbar = () => {

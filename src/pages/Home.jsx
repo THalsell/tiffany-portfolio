@@ -3,6 +3,7 @@ import { keyframes } from '@emotion/react';
 import { Box, Typography, IconButton, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { GitHub, Email, LinkedIn } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import homeFloralBG from '../assets/homeFloralBG.png';
 import NavBar from '../components/NavBar';
 
@@ -15,6 +16,36 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+`;
+
+// Gradient animation for name
+const gradientShift = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+
+// Typing animation
+const typing = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+// Blink animation for cursor
+const blink = keyframes`
+  50% {
+    border-color: transparent;
   }
 `;
 
@@ -34,30 +65,57 @@ const HomeWrapper = styled(Box)(({ theme }) => ({
   animation: `${fadeIn} 1s ease`,
 }));
 
-// Name headline
+// Name headline with gradient animation
 const Headline = styled(Typography)({
   fontFamily: '"Ms Madi", cursive',
   fontSize: '4rem',
-  color: '#8B5E3C',
-  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.15)',
+  background: 'linear-gradient(45deg, #8B5E3C, #C89968, #8B5E3C, #A9745A)',
+  backgroundSize: '300% 300%',
+  backgroundClip: 'text',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  animation: `${gradientShift} 4s ease infinite`,
+  textShadow: 'none',
   backgroundColor: 'rgba(255, 255, 255, 0.4)',
   padding: '10px 20px',
   borderRadius: '12px',
   marginBottom: '75px',
 });
 
-// Professional description
+// Typing animation with max-width
+const typingWithMaxWidth = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 680px;
+  }
+`;
+
+// Professional description with typing effect
 const SubText = styled(Typography)(({ theme }) => ({
   fontFamily: '"Playfair Display", serif',
   fontSize: '1.5rem',
   color: '#5E453B',
-  maxWidth: '600px',
   backgroundColor: 'rgba(255, 255, 255, 0.4)',
   padding: theme.spacing(2),
   borderRadius: '12px',
-  animation: `${fadeIn} 1s ease`,
-  animationDelay: '0.5s',
-  animationFillMode: 'both',
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  borderRight: '3px solid #8B5E3C',
+  margin: '0 auto',
+  maxWidth: '680px',
+  width: '0',
+  animation: `${typingWithMaxWidth} 4s steps(65, end) 0.5s forwards, ${blink} 0.75s step-end infinite`,
+  '@media (max-width: 600px)': {
+    fontSize: '1.2rem',
+    whiteSpace: 'normal',
+    width: 'auto',
+    borderRight: 'none',
+    animation: `${fadeIn} 1s ease`,
+    animationDelay: '0.5s',
+    animationFillMode: 'both',
+  },
 }));
 
 // Shared icon button style
@@ -88,10 +146,8 @@ const Home = () => {
         </IconButton>
 
         <IconButton
-          component="a"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=tiffanyrenee100@gmail.com&su=Hello&"
-          target="_blank"
-          rel="noopener noreferrer"
+          component={Link}
+          to="/contact"
           sx={iconStyles}
         >
           <Email fontSize="large" />

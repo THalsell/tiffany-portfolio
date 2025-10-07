@@ -77,6 +77,7 @@ const About = () => {
             <Typography
           variant="h3"
           gutterBottom
+          data-aos="fade-down"
           sx={{
             fontFamily: '"Ms Madi", cursive',
             fontWeight: 500,
@@ -87,11 +88,11 @@ const About = () => {
             borderRadius: '8px',
           }}
         >
-          Hey, I’m Tiffany Halsell!
+          Hey, I'm Tiffany Halsell!
         </Typography>
 
         {/* Profile Image with Blur */}
-        <ImageWrapper>
+        <ImageWrapper data-aos="zoom-in" data-aos-delay="200">
           <Avatar
             src={tiffanyImage}
           alt="Tiffany Halsell"
@@ -108,10 +109,10 @@ const About = () => {
         </ImageWrapper>
 
         {/* Bio Text */}
-        <IntroText>
+        <IntroText data-aos="fade-up" data-aos-delay="400">
           I graduated from Persevere in 2024 as a full stack web developer who
           loves turning ideas into real web applications. I enjoy tackling both
-          frontend and backend challenges, and I’m always up for learning new
+          frontend and backend challenges, and I'm always up for learning new
           things and working on fun projects.
         </IntroText>
       </AboutSection>

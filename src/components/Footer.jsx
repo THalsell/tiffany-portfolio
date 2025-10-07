@@ -7,6 +7,7 @@ const footerLinks = [
   { label: 'About', path: '/about' },
   { label: 'Projects', path: '/projects' },
   { label: 'Resume', path: '/resume' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 // Common link styles
@@ -22,6 +23,9 @@ const linkStyles = {
     color: '#A9745A',
   },
   textAlign: 'center',
+  display: 'inline-block',
+  lineHeight: 1,
+  cursor: 'pointer',
 };
 
 const Footer = () => {
@@ -43,7 +47,7 @@ const Footer = () => {
             key={label}
             component={RouterLink}
             to={path}
-            underline="hover"
+            underline="none"
             sx={linkStyles}
           >
             {label}
