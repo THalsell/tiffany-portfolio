@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi';
+import { FiDownload, FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi';
 
 const navItems = [
   { label: 'Work', href: '#work' },
@@ -32,8 +32,18 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="#top" className="font-semibold tracking-tight text-text">
-          Tiffany Halsell
+        <Link href="#top" className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-xs font-bold text-white">
+            TH
+          </span>
+          <span className="leading-tight">
+            <span className="block text-sm font-semibold tracking-tight text-text">
+              Tiffany Halsell
+            </span>
+            <span className="block font-mono text-[10px] uppercase tracking-wide text-text-muted">
+              Full-Stack Developer
+            </span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -71,9 +81,10 @@ export default function Nav() {
           <a
             href="/resume.png"
             download="Tiffany_Halsell_Resume.png"
-            className="rounded-md border border-border bg-card px-3.5 py-1.5 text-sm font-medium text-text transition-colors hover:bg-card-hover"
+            className="flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-3.5 py-1.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
           >
             Resume
+            <FiDownload size={14} />
           </a>
         </div>
 
@@ -123,9 +134,10 @@ export default function Nav() {
             <a
               href="/resume.png"
               download="Tiffany_Halsell_Resume.png"
-              className="rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium text-text"
+              className="flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-3 py-1.5 text-sm font-medium text-white"
             >
               Resume
+              <FiDownload size={14} />
             </a>
           </div>
         </nav>

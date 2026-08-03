@@ -74,6 +74,16 @@ body {
   }
 }
 
+.glow-ring {
+  background: radial-gradient(
+    closest-side,
+    rgba(91, 140, 255, 0.5),
+    rgba(139, 92, 246, 0.22) 65%,
+    transparent 85%
+  );
+  filter: blur(30px);
+}
+
 /* Faint tiled noise, layered under the hero grid for texture */
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");

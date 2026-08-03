@@ -82,20 +82,22 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.15} className="relative mx-auto w-full max-w-[280px] lg:mx-0">
-            <div className="glow absolute -inset-6 rounded-full opacity-70" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl">
-              <Image
-                src="/images/headshot.jpg"
-                alt="Tiffany Halsell"
-                fill
-                sizes="280px"
-                className="object-cover object-[50%_28%]"
-                priority
-              />
+          <Reveal delay={0.15} className="relative mx-auto w-full max-w-[280px] pb-20 lg:mx-0">
+            <div className="relative">
+              <div className="glow-ring absolute -inset-10 rounded-full" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl">
+                <Image
+                  src="/images/headshot.jpg"
+                  alt="Tiffany Halsell"
+                  fill
+                  sizes="280px"
+                  className="object-cover object-[50%_28%]"
+                  priority
+                />
+              </div>
             </div>
 
-            <div className="absolute -bottom-8 -right-6 w-[220px] rounded-2xl border border-border bg-card/95 p-4 shadow-2xl backdrop-blur">
+            <div className="absolute -bottom-4 -right-10 w-[220px] rounded-2xl border border-border bg-card/95 p-4 shadow-2xl backdrop-blur">
               <div className="space-y-3">
                 {stats.map(({ icon: Icon, value, label }) => (
                   <div key={label} className="flex items-center gap-3">
