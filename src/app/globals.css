@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #070b14;
+  --color-elevated: #0d1321;
+  --color-card: #111a2c;
+  --color-card-hover: #152137;
+  --color-border: rgba(148, 163, 184, 0.16);
+  --color-text: #f4f7fb;
+  --color-text-muted: #94a3b8;
+  --color-accent: #5b8cff;
+  --color-accent-2: #8b5cf6;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #070b14;
+}
+
+/* Faint background grid used behind the hero */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Soft radial glow, used sparingly behind headline/section accents */
+.glow {
+  background: radial-gradient(closest-side, rgba(91, 140, 255, 0.28), transparent);
+  filter: blur(40px);
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+.glow-violet {
+  background: radial-gradient(closest-side, rgba(139, 92, 246, 0.24), transparent);
+  filter: blur(40px);
+  animation: drift 26s ease-in-out infinite alternate-reverse;
+}
+
+.glow-cyan {
+  background: radial-gradient(closest-side, rgba(34, 211, 238, 0.18), transparent);
+  filter: blur(32px);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(3%, 4%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .glow-violet,
+  .glow-cyan {
+    animation: none;
+  }
+}
+
+/* Faint tiled noise, layered under the hero grid for texture */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+}
+
+/* Cursor-follow spotlight, positioned via --x/--y set from JS */
+.mouse-glow {
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(91, 140, 255, 0.12),
+    transparent 60%
+  );
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
