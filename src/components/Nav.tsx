@@ -24,16 +24,14 @@ export default function Nav() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? 'border-b border-border bg-bg/90 backdrop-blur-md'
-          : 'border-b border-transparent bg-bg/40 backdrop-blur-sm'
-      }`}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-xs font-bold text-white">
+    <header className="sticky top-4 z-50 mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 print:hidden">
+      <div
+        className={`flex items-center justify-between rounded-2xl border border-border px-6 py-3 backdrop-blur-xl transition-colors duration-300 ${
+          scrolled ? 'bg-card/60 shadow-lg shadow-black/30' : 'bg-card/30 shadow-md shadow-black/10'
+        }`}
+      >
+        <Link href="#top" className="flex items-center gap-4">
+          <span className="neon-text-purple shrink-0 pr-[0.12em] text-4xl font-light tracking-[-0.12em]">
             TH
           </span>
           <span className="leading-tight">
@@ -78,14 +76,13 @@ export default function Nav() {
           >
             <FiLinkedin size={18} />
           </a>
-          <a
-            href="/resume.png"
-            download="Tiffany_Halsell_Resume.png"
+          <Link
+            href="/resume"
             className="flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-3.5 py-1.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
           >
             Resume
             <FiDownload size={14} />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -101,7 +98,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden border-t border-border bg-bg px-6 py-4 flex flex-col gap-1">
+        <nav className="md:hidden mt-2 rounded-2xl border border-border bg-card/60 px-6 py-4 backdrop-blur-xl flex flex-col gap-1">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -131,14 +128,14 @@ export default function Nav() {
             >
               <FiLinkedin size={18} />
             </a>
-            <a
-              href="/resume.png"
-              download="Tiffany_Halsell_Resume.png"
+            <Link
+              href="/resume"
+              onClick={() => setOpen(false)}
               className="flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-3 py-1.5 text-sm font-medium text-white"
             >
               Resume
               <FiDownload size={14} />
-            </a>
+            </Link>
           </div>
         </nav>
       )}

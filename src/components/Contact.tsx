@@ -1,7 +1,20 @@
-import { FiArrowUpRight } from 'react-icons/fi';
+'use client';
+
+import { useState } from 'react';
+import { FiArrowUpRight, FiCheck, FiCopy } from 'react-icons/fi';
 import Reveal from './Reveal';
 
+const EMAIL = 'tiffanyrenee100@gmail.com';
+
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="scroll-mt-20 relative overflow-hidden">
       <div className="glow absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full" />
@@ -18,11 +31,28 @@ export default function Contact() {
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:tiffanyrenee100@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="rounded-lg bg-gradient-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
             >
               Email Me
             </a>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="flex items-center gap-1.5 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-text transition-colors hover:bg-card-hover"
+            >
+              {copied ? (
+                <>
+                  Copied
+                  <FiCheck size={15} className="text-accent" />
+                </>
+              ) : (
+                <>
+                  Copy Email
+                  <FiCopy size={15} />
+                </>
+              )}
+            </button>
             <a
               href="https://www.linkedin.com/in/tiffany-halsell/"
               target="_blank"

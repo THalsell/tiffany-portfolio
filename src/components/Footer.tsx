@@ -1,9 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
+const EMAIL = 'tiffanyrenee100@gmail.com';
+
 export default function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 text-sm text-text-muted sm:flex-row sm:justify-between">
+      <div className="mx-auto flex max-w-7xl 2xl:max-w-[1600px] flex-col items-center gap-4 px-6 py-10 text-sm text-text-muted sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} Tiffany Halsell</p>
         <div className="flex items-center gap-5">
           <a
@@ -24,8 +37,12 @@ export default function Footer() {
           >
             <FiLinkedin size={18} />
           </a>
-          <a href="mailto:tiffanyrenee100@gmail.com" className="transition-colors hover:text-text">
-            tiffanyrenee100@gmail.com
+          <a
+            href={`mailto:${EMAIL}`}
+            onClick={handleCopy}
+            className="transition-colors hover:text-text"
+          >
+            {copied ? 'Copied to clipboard' : EMAIL}
           </a>
         </div>
       </div>

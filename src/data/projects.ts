@@ -31,7 +31,7 @@ export const featuredProjects: FeaturedProject[] = [
       { label: 'Mobile', src: '/images/oms-mobile.jpeg' },
     ],
     metrics: [
-      { label: 'Role', value: 'Full-Stack Owner' },
+      { label: 'Role', value: 'Full-Stack Developer' },
       { label: 'Integrations', value: '6+ Platforms' },
       { label: 'Status', value: 'Live in Production' },
     ],

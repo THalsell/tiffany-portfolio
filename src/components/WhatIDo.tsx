@@ -30,16 +30,18 @@ const items = [
 
 export default function WhatIDo() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 pb-24 pt-4">
       <Reveal>
-        <div className="grid divide-y divide-border rounded-2xl border border-border bg-card sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
-          {items.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="p-6 transition-colors hover:bg-card-hover"
-            >
-              <Icon size={20} className="text-accent" />
-              <h3 className="mt-4 text-sm font-medium text-text">{title}</h3>
+        <div className="grid divide-y divide-border rounded-2xl border border-border bg-card/30 backdrop-blur-xl sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
+          {items.map(({ icon: Icon, title, description }, i) => (
+            <div key={title} className="relative p-6">
+              {i !== 0 && (
+                <span className="absolute left-0 top-1/2 hidden h-16 w-px -translate-y-1/2 bg-border sm:block" />
+              )}
+              <div className="flex items-center gap-2.5">
+                <Icon size={18} className="shrink-0 text-accent" />
+                <h3 className="text-sm font-medium text-text">{title}</h3>
+              </div>
               <p className="mt-2 text-sm leading-relaxed text-text-muted">
                 {description}
               </p>

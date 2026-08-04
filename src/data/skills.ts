@@ -31,4 +31,16 @@ export const skillGroups: SkillGroup[] = [
     label: 'Workflow & Collaboration',
     items: ['Git', 'GitHub', 'CI/CD', 'Debugging', 'Stakeholder Communication', 'Project Planning'],
   },
+  {
+    label: 'AI-Assisted Development',
+    items: [
+      'Claude Code',
+      'ChatGPT',
+      'GitHub Copilot',
+      'Prompt Engineering',
+      'Rapid Prototyping',
+      'AI-Driven Debugging',
+      'Workflow Automation',
+    ],
+  },
 ];
