@@ -62,6 +62,15 @@ export default function ResumePage() {
           </p>
           <p className="mt-3 text-sm">
             931-397-0062 &nbsp;·&nbsp; tiffanyrenee100@gmail.com &nbsp;·&nbsp; Tennessee
+            &nbsp;·&nbsp;{' '}
+            <a
+              href="https://tiffanyhalsell.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2"
+            >
+              tiffanyhalsell.dev
+            </a>
           </p>
         </div>
 
