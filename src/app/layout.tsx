@@ -13,10 +13,29 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const title = 'Tiffany Halsell — Full-Stack Developer & Digital Operations Specialist';
+const description =
+  'Full-stack developer building digital systems that help businesses grow — Next.js, TypeScript, Shopify, APIs, SEO, and analytics.';
+
 export const metadata: Metadata = {
-  title: 'Tiffany Halsell — Full-Stack Developer & Digital Operations Specialist',
-  description:
-    'Full-stack developer building digital systems that help businesses grow — Next.js, TypeScript, Shopify, APIs, SEO, and analytics.',
+  metadataBase: new URL('https://tiffanyhalsell.dev'),
+  title,
+  description,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title,
+    description,
+    url: 'https://tiffanyhalsell.dev',
+    siteName: 'Tiffany Halsell',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
