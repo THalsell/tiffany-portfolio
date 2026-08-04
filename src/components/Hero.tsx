@@ -69,12 +69,12 @@ export default function Hero() {
                 >
                   <Image
                     src={icon}
-                    alt=""
+                    alt={label}
                     width={28}
                     height={28}
                     className="h-6 w-6 object-contain md:h-7 md:w-7"
                   />
-                  {label}
+                  <span className="hidden sm:inline">{label}</span>
                 </span>
               ))}
             </div>
