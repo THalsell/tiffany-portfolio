@@ -23,13 +23,13 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="bg-noise absolute inset-0" />
-      <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]" />
+      <div className="bg-grid absolute inset-0 mask-[radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]" />
       <div className="glow absolute -top-32 left-1/4 h-96 w-96 rounded-full" />
       <div className="glow-violet absolute -top-20 right-1/4 h-80 w-80 rounded-full" />
       <div className="glow-cyan absolute top-40 left-[10%] h-64 w-64 rounded-full" />
       <MouseGlow />
 
-      <div className="relative mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 pb-8 pt-24 md:pt-32">
+      <div className="relative mx-auto max-w-7xl 2xl:max-w-400 px-6 pb-8 pt-24 md:pt-32">
         <div className="grid gap-16 lg:grid-cols-[1fr_340px] lg:items-center xl:grid-cols-[1fr_380px] 2xl:grid-cols-[1fr_420px]">
           <Reveal>
             <p className="font-mono text-sm text-accent">
@@ -49,7 +49,7 @@ export default function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#work"
-                className="rounded-lg bg-gradient-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
+                className="rounded-lg bg-linear-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
               >
                 View My Work
               </a>
@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.15} className="relative mx-auto w-full max-w-[340px] pb-16 lg:mx-0 xl:max-w-[380px] xl:pb-20 2xl:max-w-[420px] 2xl:pb-24">
+          <Reveal delay={0.15} className="relative mx-auto w-full max-w-85 pb-16 lg:mx-0 xl:max-w-95 xl:pb-20 2xl:max-w-105 2xl:pb-24">
             <div className="relative">
               <div className="glow-ring absolute -inset-10 rounded-full" />
               <svg
@@ -101,9 +101,9 @@ export default function Hero() {
                   </linearGradient>
                 </defs>
               </svg>
-              <div className="neon-border relative aspect-[4/5] overflow-hidden rounded-3xl border bg-elevated shadow-2xl" />
+              <div className="neon-border relative aspect-4/5 overflow-hidden rounded-3xl border bg-elevated shadow-2xl" />
 
-              <div className="absolute -bottom-8 -right-4 w-[170px] rounded-xl border border-border bg-card/95 p-3.5 shadow-2xl backdrop-blur sm:-right-6 xl:-bottom-10 xl:-right-8 xl:w-[210px] xl:rounded-2xl xl:p-5 2xl:-bottom-12 2xl:-right-10 2xl:w-[240px]">
+              <div className="absolute -bottom-8 -right-4 w-42.5 rounded-xl border border-border bg-card/95 p-3.5 shadow-2xl backdrop-blur sm:-right-6 xl:-bottom-10 xl:-right-8 xl:w-52.5 xl:rounded-2xl xl:p-5 2xl:-bottom-12 2xl:-right-10 2xl:w-60">
                 <div className="space-y-2.5 xl:space-y-3.5">
                   {stats.map(({ icon: Icon, value, label }) => (
                     <div key={label} className="flex items-center gap-2.5 xl:gap-3.5">

@@ -11,7 +11,7 @@ const alsoWorkingWith = Array.from(
 
 export default function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 py-24">
+    <section id="skills" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-400 px-6 py-24">
       <Reveal className="max-w-2xl">
         <p className="font-mono text-sm text-accent">Technical Skills</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-text sm:text-4xl">

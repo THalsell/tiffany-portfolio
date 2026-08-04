@@ -24,7 +24,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-4 z-50 mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 print:hidden">
+    <header className="sticky top-4 z-50 mx-auto max-w-7xl 2xl:max-w-400 px-6 print:hidden">
       <div
         className={`flex items-center justify-between rounded-2xl border border-border px-6 py-3 backdrop-blur-xl transition-colors duration-300 ${
           scrolled ? 'bg-card/60 shadow-lg shadow-black/30' : 'bg-card/30 shadow-md shadow-black/10'
@@ -78,7 +78,7 @@ export default function Nav() {
           </a>
           <Link
             href="/resume"
-            className="flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-3.5 py-1.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
+            className="flex items-center gap-1.5 rounded-md bg-linear-to-r from-accent to-accent-2 px-3.5 py-1.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
           >
             Resume
             <FiDownload size={14} />
@@ -131,7 +131,7 @@ export default function Nav() {
             <Link
               href="/resume"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-3 py-1.5 text-sm font-medium text-white"
+              className="flex items-center gap-1.5 rounded-md bg-linear-to-r from-accent to-accent-2 px-3 py-1.5 text-sm font-medium text-white"
             >
               Resume
               <FiDownload size={14} />

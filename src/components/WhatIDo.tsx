@@ -30,7 +30,7 @@ const items = [
 
 export default function WhatIDo() {
   return (
-    <section className="mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 pb-24 pt-4">
+    <section className="mx-auto max-w-7xl 2xl:max-w-400 px-6 pb-24 pt-4">
       <Reveal>
         <div className="grid divide-y divide-border rounded-2xl border border-border bg-card/30 backdrop-blur-xl sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
           {items.map(({ icon: Icon, title, description }, i) => (

@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-7xl 2xl:max-w-[1600px] flex-col items-center gap-4 px-6 py-10 text-sm text-text-muted sm:flex-row sm:justify-between">
+      <div className="mx-auto flex max-w-7xl 2xl:max-w-400 flex-col items-center gap-4 px-6 py-10 text-sm text-text-muted sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} Tiffany Halsell</p>
         <div className="flex items-center gap-5">
           <a

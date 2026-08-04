@@ -3,7 +3,7 @@ import Reveal from './Reveal';
 
 export default function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 py-24">
+    <section id="experience" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-400 px-6 py-24">
       <Reveal className="max-w-2xl">
         <p className="font-mono text-sm text-accent">Experience</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-text sm:text-4xl">
@@ -12,7 +12,7 @@ export default function Experience() {
       </Reveal>
 
       <div className="relative mt-14 max-w-3xl">
-        <div className="absolute left-[13px] top-2 bottom-2 w-px bg-border sm:left-[15px]" />
+        <div className="absolute left-3.25 top-2 bottom-2 w-px bg-border sm:left-3.75" />
 
         <div className="space-y-14">
           {experience.map((entry, i) => (

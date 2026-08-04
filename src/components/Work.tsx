@@ -5,7 +5,7 @@ import Reveal from './Reveal';
 
 export default function Work() {
   return (
-    <section id="work" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 py-24">
+    <section id="work" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-400 px-6 py-24">
       <Reveal className="flex flex-wrap items-end justify-between gap-4">
         <div className="max-w-2xl">
           <p className="font-mono text-sm text-accent">Featured Work</p>
@@ -39,7 +39,7 @@ export default function Work() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-accent to-accent-2 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
+                      className="flex items-center gap-1.5 rounded-lg bg-linear-to-r from-accent to-accent-2 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
                     >
                       Visit Live Site
                       <FiArrowUpRight size={15} />
@@ -61,7 +61,7 @@ export default function Work() {
 
               <div className="relative mt-10">
                 <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
-                  <div className="relative aspect-[1920/943] w-full">
+                  <div className="relative aspect-1920/943 w-full">
                     <Image
                       src={primary.src}
                       alt={primary.label}
@@ -75,7 +75,7 @@ export default function Work() {
 
                 {mobile && (
                   <div className="absolute -bottom-6 -right-4 w-[22%] overflow-hidden rounded-xl border border-border bg-card shadow-2xl sm:-bottom-8 sm:-right-6">
-                    <div className="relative aspect-[9/16] w-full">
+                    <div className="relative aspect-9/16 w-full">
                       <Image
                         src={mobile.src}
                         alt={mobile.label}

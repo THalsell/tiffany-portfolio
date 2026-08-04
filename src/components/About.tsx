@@ -11,7 +11,7 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-[1600px] px-6 py-24">
+    <section id="about" className="scroll-mt-20 mx-auto max-w-7xl 2xl:max-w-400 px-6 py-24">
       <Reveal>
         <p className="font-mono text-sm text-accent">About</p>
       </Reveal>

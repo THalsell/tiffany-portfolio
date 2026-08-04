@@ -32,7 +32,7 @@ export default function Contact() {
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
               href={`mailto:${EMAIL}`}
-              className="rounded-lg bg-gradient-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
+              className="rounded-lg bg-linear-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03]"
             >
               Email Me
             </a>
