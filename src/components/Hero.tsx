@@ -101,7 +101,16 @@ export default function Hero() {
                   </linearGradient>
                 </defs>
               </svg>
-              <div className="neon-border relative aspect-4/5 overflow-hidden rounded-3xl border bg-elevated shadow-2xl" />
+              <div className="neon-border relative aspect-4/5 overflow-hidden rounded-3xl border bg-elevated shadow-2xl">
+                <Image
+                  src="/images/headshot.png"
+                  alt="Tiffany Halsell"
+                  fill
+                  priority
+                  sizes="(min-width: 1536px) 420px, (min-width: 1280px) 380px, (min-width: 1024px) 340px, 85vw"
+                  className="object-cover"
+                />
+              </div>
 
               <div className="absolute -bottom-8 -right-4 w-42.5 rounded-xl border border-border bg-card/95 p-3.5 shadow-2xl backdrop-blur sm:-right-6 xl:-bottom-10 xl:-right-8 xl:w-52.5 xl:rounded-2xl xl:p-5 2xl:-bottom-12 2xl:-right-10 2xl:w-60">
                 <div className="space-y-2.5 xl:space-y-3.5">
